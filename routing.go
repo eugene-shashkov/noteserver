@@ -1,7 +1,7 @@
 package main
 
 import (
-	"notema/handlers"
+	"github.com/eugene-shashkov/notema-server/handlers"
 
 	"github.com/gorilla/mux"
 )
