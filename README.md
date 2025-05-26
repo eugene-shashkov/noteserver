@@ -1,3 +1,3 @@
-# notema
+# Note Server
 
-golang RESTful api to save notes
+Go web server API to save note into mysql database
