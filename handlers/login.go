@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"encoding/json"
 	"net/http"
-	"notema/app"
-	"notema/utils"
+	"noteserver/app"
+	"noteserver/utils"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -40,7 +40,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		responsejson.Status = "success"
 		token := utils.GenerateToken()
 		time := int32(time.Now().Unix())
-		TokenToDb(token, uid, 1, time)
+		TokenQuery(token, uid, 1, time)
 	} else {
 		w.WriteHeader(http.StatusInternalServerError)
 		responsejson.Status = "error"

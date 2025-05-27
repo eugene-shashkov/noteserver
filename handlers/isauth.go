@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"database/sql"
-	"notema/app"
+	"noteserver/app"
 )
 
 // IsAuth check if user token valid

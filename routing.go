@@ -1,13 +1,14 @@
-package main
+package noteserver
 
 import (
-	"github.com/eugene-shashkov/notema-server/handlers"
+	"noteserver/handlers"
 
 	"github.com/gorilla/mux"
 )
 
 // Routing func is a startpoint of routing mechanism
-func Routing() *mux.Router {
+func (srv Server) Routing() *mux.Router {
+
 	mx := mux.NewRouter()
 	mx.HandleFunc("/", handlers.IndexHandler).Methods("GET")
 	mx.HandleFunc("/registration", handlers.RegistrationHandler).Methods("POST").Queries("email", "{email}", "password", "{password}", "name", "{name}")

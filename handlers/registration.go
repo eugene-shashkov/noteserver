@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"notema/app"
-	"notema/utils"
+	"noteserver/app"
+	"noteserver/utils"
 
 	"github.com/gorilla/mux"
 )
@@ -67,7 +67,7 @@ func RegistrationHandler(w http.ResponseWriter, r *http.Request) {
 
 		// create random user token
 		token := utils.GenerateToken()
-		SaveToken(token, uid, 1, time)
+		TokenQuery(token, uid, 1, time)
 
 		responsejson.Status = token
 	}
